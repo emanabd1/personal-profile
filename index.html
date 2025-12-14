@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eman Abdulsemed - Empowering Digital Experiences</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Poppins (for general text) and Montserrat (for headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon (optional but recommended for professionalism) -->
+    <link rel="icon" href="https://via.placeholder.com/32/007bff/ffffff?text=EA" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1>Eman Abdulsemed</h1>
+            <p>Crafting Seamless Web Solutions with Passion and Precision</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section - H1 Name, Image, and Bio -->
+        <section class="hero-section section-card fade-in">
+            <div class="hero-content">
+                <h2 class="section-title">Hello, I'm <span class="gradient-text">Eman Abdulsemed</span></h2>
+                <p class="bio">
+                    A <span class="highlight">passionate Full Stack Developer</span> and <span class="highlight">UI/UX enthusiast</span> a passionate and dedicated 2nd-year student at Adama Science and Technology University, pursuing a degree in Electrical Engineering and Computing. My academic journey is coupled with a strong foundation in software development, and a keen eye for user experience, especially within the exciting field of development. I thrive on transforming complex ideas into elegant, functional, and user-friendly digital solutions. With an eagerness to learn and grow, I am committed to continuous learning and delivering high-quality results. Let's build something amazing together!"
+                <div class="hero-actions">
+                    <a href="#contact" class="btn primary-btn">Get in Touch</a>
+                    <a href="cv.html" target="_blank" class="btn secondary-btn">View My CV </a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="photo.png" alt="Eman Abdulsemed Profile Picture" class="profile-image shadow-effect">
+               
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="contact-section section-card fade-in">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="subtitle">I'm always open to new opportunities and collaborations. Reach out!</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="7" required placeholder="I'd love to chat about..."></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <p>&copy; 2025 Eman Abdulsemed. All rights reserved.</p>
+    </footer>
+
+    <!-- Contact Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content shadow-effect">
+            <span class="close-button">&times;</span>
+            <p class="modal-message">Thank you for your message, Eman! I will get back to you shortly.</p>
+            <button class="btn modal-ok-btn">OK</button>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

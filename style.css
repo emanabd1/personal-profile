@@ -1,0 +1,560 @@
+/* --- CSS Variables for Easy Customization --- */
+:root {
+    --primary-color: #6f42c1; /* A rich purple */
+    --secondary-color: #007bff; /* A vibrant blue */
+    --accent-color: #e83e8c; /* A strong pink for highlights */
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --bg-light: #f4f7f6;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+
+    --gradient-1: linear-gradient(45deg, #6f42c1, #007bff); /* Purple to Blue */
+    --gradient-2: linear-gradient(45deg, #007bff, #17a2b8); /* Blue to Cyan */
+    --gradient-3: linear-gradient(45deg, #e83e8c, #fd7e14); /* Pink to Orange */
+
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --- General Resets and Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.5em; /* Larger, more impactful */
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-1); /* Gradient underline */
+    border-radius: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.15em;
+    color: #6c757d;
+    margin-bottom: 50px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 30px;
+    flex-grow: 1;
+}
+
+/* --- Gradient Text --- */
+.gradient-text {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Header Styling --- */
+.site-header {
+    background: var(--gradient-1); /* Vibrant gradient background */
+    color: var(--text-light);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-strong);
+    position: relative; /* For potential future animations */
+    overflow: hidden; /* To contain any pseudo-elements */
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0.6;
+    animation: header-fade 3s ease-out forwards;
+}
+
+
+.header-content {
+    position: relative;
+    z-index: 1; /* Ensure content is above pseudo-elements */
+}
+
+.site-header h1 {
+    color: var(--text-light);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.site-header p {
+    font-size: 1.4em;
+    opacity: 0.9;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Section Card Styling --- */
+.section-card {
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 60px;
+    border-left: 5px solid var(--primary-color); /* Subtle accent border */
+}
+
+/* --- Hero Section Styling --- */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Increased gap */
+    padding: 60px; /* More padding for breathing room */
+}
+
+.hero-content {
+    flex: 2;
+    min-width: 350px;
+    text-align: left;
+}
+
+.hero-content h2 {
+    margin-bottom: 25px;
+    font-size: 2.8em;
+}
+
+.hero-content .bio {
+    font-size: 1.15em;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-image-container {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 7px solid var(--primary-color); /* Thicker, bolder border */
+    transition: transform 0.4s ease, border-color 0.4s ease, filter 0.4s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05) rotate(2deg); /* Subtle zoom and rotate on hover */
+    border-color: var(--secondary-color); /* Change border color on hover */
+    filter: brightness(1.1);
+}
+
+.shadow-effect {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* --- Action Buttons --- */
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px; /* Pill-shaped buttons */
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.primary-btn {
+    background: var(--gradient-1); /* Gradient button */
+    color: var(--text-light);
+    box-shadow: var(--shadow-light);
+}
+
+.primary-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-strong);
+    opacity: 0.9;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-light);
+}
+
+/* --- Contact Section Styling --- */
+.contact-section {
+    text-align: center;
+}
+
+#contactForm {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.05em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: #fcfcfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.2); /* Soft focus shadow */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    background: var(--gradient-2);
+    color: var(--text-light);
+    padding: 15px 35px;
+    font-size: 1.2em;
+    align-self: center; /* Center the submit button */
+    border-radius: 50px;
+    box-shadow: var(--shadow-light);
+}
+
+.submit-btn:hover {
+    background: var(--gradient-1); /* Subtle change on hover */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-strong);
+}
+
+/* --- Footer Styling --- */
+.site-footer {
+    background-color: #212529; /* Darker footer */
+    color: var(--text-light);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: auto;
+    font-size: 0.95em;
+}
+
+/* --- Modal for Contact Success --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: auto;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    animation: zoomIn 0.3s ease-out; /* Simple entry animation */
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-message {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.modal-ok-btn {
+    background: var(--gradient-1);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.1em;
+}
+
+.modal-ok-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+}
+
+/* --- Animations --- */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0; /* Hide initially */
+    /* You might want to delay animations for sections appearing later on scroll,
+       but for a simple portfolio, a direct fade-in is okay. */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .hero-section {
+        flex-direction: column-reverse; /* Image above text on smaller screens */
+        text-align: center;
+        padding: 40px;
+        gap: 40px;
+    }
+    .hero-content {
+        min-width: unset;
+        width: 100%;
+    }
+    .hero-content h2 {
+        font-size: 2.2em;
+        text-align: center;
+    }
+    .hero-content .bio {
+        font-size: 1.05em;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+    .section-card {
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+    .subtitle {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 40px 15px;
+    }
+    .site-header h1 {
+        font-size: 2.2em;
+    }
+    .site-header p {
+        font-size: 1.1em;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .hero-section {
+        padding: 30px;
+        gap: 30px;
+    }
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+    .hero-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+    .btn {
+        width: 80%; /* Make buttons take more width */
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+    .contact-section {
+        padding: 30px;
+    }
+    .form-group label {
+        font-size: 1em;
+    }
+    .form-group input, .form-group textarea {
+        padding: 12px;
+    }
+    .submit-btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    .site-header p {
+        font-size: 0.95em;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .section-card {
+        padding: 25px;
+    }
+    .hero-content h2 {
+        font-size: 1.6em;
+    }
+    .hero-content .bio {
+        font-size: 0.95em;
+    }
+    .profile-image {
+        width: 180px;
+        height: 180px;
+        border-width: 5px;
+    }
+    .btn {
+        width: 95%;
+    }
+    .modal-content {
+        padding: 30px;
+    }
+    .modal-message {
+        font-size: 1.1em;
+    }
+}
+/
